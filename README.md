@@ -1,5 +1,6 @@
 
 > 在 [https://songxiao1018.github.io/micro-bit-eat-ben/](https://songxiao1018.github.io/micro-bit-eat-ben/) 打开此页面
+> 在 [https://songxiao1018.github.io/micro-bit-eat-ben/daimajieshuo](https://songxiao1018.github.io/micro-bit-eat-ben/) 阅读代码解析
 
 ## 用作扩展
 
