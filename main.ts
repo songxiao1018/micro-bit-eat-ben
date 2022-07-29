@@ -1,29 +1,29 @@
 input.onGesture(Gesture.TiltLeft, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Square, 432, 164, 42, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
-    x += -1
+    人物x += -1
 })
 input.onGesture(Gesture.LogoDown, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Square, 432, 164, 42, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
-    y += -1
+    人物y += -1
 })
 input.onGesture(Gesture.LogoUp, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Square, 432, 164, 42, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
-    y += 1
+    人物y += 1
 })
 input.onButtonPressed(Button.AB, function () {
     k = 1
 })
 input.onGesture(Gesture.TiltRight, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Square, 432, 164, 42, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
-    x += 1
+    人物x += 1
 })
-let yy = 0
-let xx = 0
+let 豆子y = 0
+let 豆子x = 0
+let 积分 = 0
 let k = 0
-let y = 0
-let x = 0
+let 人物y = 0
+let 人物x = 0
 music.playSoundEffect(music.createSoundEffect(WaveShape.Noise, 164, 31, 34, 16, 750, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
-let score = 0
 while (true) {
     basic.showString("Hello!")
     if (input.buttonIsPressed(Button.A)) {
@@ -59,13 +59,14 @@ while (true) {
  */
 basic.forever(function () {
     k = 0
-    x = 2
-    y = 2
-    xx = randint(0, 4)
-    yy = randint(0, 4)
-    while (x == xx && y == yy) {
-        xx = randint(0, 4)
-        yy = randint(0, 4)
+    人物x = 2
+    人物y = 2
+    积分 = 0
+    豆子x = randint(0, 4)
+    豆子y = randint(0, 4)
+    while (人物x == 豆子x && 人物y == 豆子y) {
+        豆子x = randint(0, 4)
+        豆子y = randint(0, 4)
     }
     while (true) {
         k = 0
@@ -81,24 +82,24 @@ basic.forever(function () {
             }
         }
         basic.clearScreen()
-        led.plotBrightness(x, y, 255)
-        led.plotBrightness(xx, yy, 100)
-        if (x == xx && y == yy) {
-            score += 1
-            while (x == xx && y == yy) {
-                xx = randint(0, 4)
-                yy = randint(0, 4)
+        basic.pause(100)
+        led.plotBrightness(人物x, 人物y, 255)
+        led.plotBrightness(豆子x, 豆子y, 100)
+        if (人物x == 豆子x && 人物y == 豆子y) {
+            积分 += 1
+            while (人物x == 豆子x && 人物y == 豆子y) {
+                豆子x = randint(0, 4)
+                豆子y = randint(0, 4)
             }
         }
-        if (x < 0 || y < 0 || (x > 4 || y > 4)) {
+        if (人物x < 0 || 人物y < 0 || (人物x > 4 || 人物y > 4)) {
             break;
         }
-        basic.pause(100)
     }
-    k = 0
     basic.clearScreen()
+    k = 0
     while (true) {
-        basic.showString("" + (score))
+        basic.showString("" + (积分))
         if (k == 1) {
             break;
         }
