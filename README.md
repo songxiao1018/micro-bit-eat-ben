@@ -1,6 +1,5 @@
 
 > 在 [https://songxiao1018.github.io/micro-bit-eat-ben/](https://songxiao1018.github.io/micro-bit-eat-ben/) 打开此页面
-> 在 [https://songxiao1018.github.io/micro-bit-eat-ben/daimajieshuo](https://songxiao1018.github.io/micro-bit-eat-ben/) 阅读代码解析
 
 ## 用作扩展
 
@@ -20,6 +19,8 @@
 * 粘贴 **https://github.com/songxiao1018/micro-bit-eat-ben** 并点击导入
 
 ## 游戏玩法&基本运行逻辑
+
+[在这里阅读详细代码解析](https://songxiao1018.github.io/micro-bit-eat-ben/daimajieshuo) 
 
 * 游戏玩法
 
