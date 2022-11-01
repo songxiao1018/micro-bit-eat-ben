@@ -1,11 +1,20 @@
+/**
+ * 左
+ */
 input.onGesture(Gesture.TiltLeft, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Square, 432, 164, 42, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
     人物x += -1
 })
+/**
+ * 下
+ */
 input.onGesture(Gesture.LogoDown, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Square, 432, 164, 42, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
     人物y += -1
 })
+/**
+ * 上
+ */
 input.onGesture(Gesture.LogoUp, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Square, 432, 164, 42, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
     人物y += 1
@@ -13,6 +22,9 @@ input.onGesture(Gesture.LogoUp, function () {
 input.onButtonPressed(Button.AB, function () {
     k = 1
 })
+/**
+ * 右
+ */
 input.onGesture(Gesture.TiltRight, function () {
     music.playSoundEffect(music.createSoundEffect(WaveShape.Square, 432, 164, 42, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), SoundExpressionPlayMode.InBackground)
     人物x += 1
@@ -31,22 +43,10 @@ while (true) {
     }
 }
 /**
- * 上
- */
-/**
- * 下
- */
-/**
  * 生成一个和人物不同的点
  */
 /**
- * 右
- */
-/**
  * 判断是否需要暂停
- */
-/**
- * 左
  */
 /**
  * 判断是否吃到豆子
@@ -54,9 +54,7 @@ while (true) {
 /**
  * 判断人物是否出界
  */
-/**
- * 判断重新开始
- */
+// 判断重新开始
 basic.forever(function () {
     k = 0
     人物x = 2
@@ -84,7 +82,7 @@ basic.forever(function () {
         basic.clearScreen()
         basic.pause(100)
         led.plotBrightness(人物x, 人物y, 255)
-        led.plotBrightness(豆子x, 豆子y, 100)
+        led.plotBrightness(豆子x, 豆子y, 50)
         if (人物x == 豆子x && 人物y == 豆子y) {
             积分 += 1
             while (人物x == 豆子x && 人物y == 豆子y) {
@@ -99,7 +97,7 @@ basic.forever(function () {
     basic.clearScreen()
     k = 0
     while (true) {
-        basic.showString("" + (积分))
+        basic.showString("" + 积分)
         if (k == 1) {
             break;
         }
